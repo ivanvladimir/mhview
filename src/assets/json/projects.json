@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Wikipedia",
+        "id": "wiki0",
+        "description": "Topics found in wikipedia"
+    },
+    {  
+        "name": "NIPS",
+        "id": "nips0",
+        "description": "Topics extracted from wikipedia"
+    }
+]

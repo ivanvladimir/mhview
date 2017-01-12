@@ -4,9 +4,9 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class JsService {
+export class JsonService {
 
-  private dataUrl = '/json/';
+  private dataUrl = '/assets/json/';
 
   constructor(private http: Http) {}
 

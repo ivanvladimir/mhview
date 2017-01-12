@@ -12,6 +12,7 @@ import {SanitizeHtmlPipe} from './sanitize.pipe';
 import {HomeComponent} from './home/home.component';
 import {CorporaComponent} from './corpora/corpora.component';
 import {MarkdownModule} from 'angular2-markdown';
+import {JsonService} from './json.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import {MarkdownModule} from 'angular2-markdown';
     MaterialModule.forRoot(),
     RouterModule.forRoot(routes, { useHash: false }),
   ],
-  providers: [],
+  providers: [JsonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

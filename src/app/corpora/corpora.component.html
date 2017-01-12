@@ -1,3 +1,7 @@
-<p>
-  corpora works!
-</p>
+<md-nav-list>
+  <md-list-item *ngFor="let project of projects | async">
+    <a md-line [routerLink]="['/topics/',project.id]">{{ project.name }}</a>
+    <h3 md-line></h3>
+    <p md-line>{{ project.description }}</p>
+  </md-list-item>
+</md-nav-list>
