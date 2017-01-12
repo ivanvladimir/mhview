@@ -6,21 +6,25 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 
-import { routes } from './app.routes';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { CorporaComponent } from './corpora/corpora.component';
+import {routes} from './app.routes';
+import {AppComponent} from './app.component';
+import {SanitizeHtmlPipe} from './sanitize.pipe';
+import {HomeComponent} from './home/home.component';
+import {CorporaComponent} from './corpora/corpora.component';
+import {MarkdownModule} from 'angular2-markdown';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CorporaComponent
+    CorporaComponent,
+    SanitizeHtmlPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    MarkdownModule,
     MaterialModule.forRoot(),
     RouterModule.forRoot(routes, { useHash: false }),
   ],
