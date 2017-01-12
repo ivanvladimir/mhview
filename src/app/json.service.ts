@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Http} from '@angular/http';
-import 'rxjs/add/operator/toPromise';
+import {Http, Response} from '@angular/http';
+import {Observable}     from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -12,9 +12,20 @@ export class JsonService {
 
   getJSON (file: String) {
     return this.http.get(this.dataUrl + file)
-              .toPromise()
-              .then(request => <string[]> request.json())
+              .map(this.extractData)
               .catch(this.handleError);
+  }
+
+  getTopics (dir: String) {
+    return Observable.forkJoin(
+        this.http.get(this.dataUrl+dir+"/voca.json").map(this.extractData).catch(this.handleError),
+        this.http.get(this.dataUrl+dir+"/topics.json").map(this.extractData).catch(this.handleError)
+    );
+  }
+
+  private extractData(res: Response) {
+    let body = res.json();
+    return body;
   }
 
   private handleError (error: any) {

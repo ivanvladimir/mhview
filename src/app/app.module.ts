@@ -13,13 +13,19 @@ import {HomeComponent} from './home/home.component';
 import {CorporaComponent} from './corpora/corpora.component';
 import {MarkdownModule} from 'angular2-markdown';
 import {JsonService} from './json.service';
+import {SearchBoxComponent} from './search-box.component';
+import { SearchPipe } from './search.pipe';
+import { TopicsComponent } from './topics/topics.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CorporaComponent,
-    SanitizeHtmlPipe
+    SearchBoxComponent,
+    SearchPipe,
+    SanitizeHtmlPipe,
+    TopicsComponent
   ],
   imports: [
     BrowserModule,

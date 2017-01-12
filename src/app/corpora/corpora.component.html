@@ -1,7 +1,7 @@
+<my-search-box (update)="onUpdate($event)"></my-search-box>
 <md-nav-list>
-  <md-list-item *ngFor="let project of projects | async">
-    <a md-line [routerLink]="['/topics/',project.id]">{{ project.name }}</a>
-    <h3 md-line></h3>
-    <p md-line>{{ project.description }}</p>
+  <md-list-item *ngFor="let project of projects | async | search: term ">
+    <h3 md-line><a md-line [routerLink]="['/topics/',project.id]">{{ project.name }}</a></h3>
+    <a md-line [routerLink]="['/topics/',project.id]">{{ project.description }}</a>
   </md-list-item>
 </md-nav-list>
