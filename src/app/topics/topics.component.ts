@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {JsonService} from '../json.service';
 import {SearchBoxComponent} from '../search-box.component';
+import {TopicComponent} from './topic/topic.component';
 
 
 @Component({
@@ -15,17 +16,8 @@ export class TopicsComponent implements OnInit {
 
   constructor(private jsonService:JsonService) { 
     this.jsonService.getTopics("wiki01").subscribe(
-        data => {this.voca = data[0]; this.topics=data[1]; console.log(this.voca);}
+        data => {this.voca = data[0]; this.topics=data[1];}
     )
-    
-  }
-
-  private topic2string(indices,words){
-    let ws=[]
-    for (let i in indices){
-        ws.push(words[indices[i]]);
-    }
-    return ws.join(', ')
   }
 
   onUpdate(term: string): void {

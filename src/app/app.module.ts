@@ -16,6 +16,7 @@ import {JsonService} from './json.service';
 import {SearchBoxComponent} from './search-box.component';
 import { SearchPipe } from './search.pipe';
 import { TopicsComponent } from './topics/topics.component';
+import { TopicComponent } from './topics/topic/topic.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TopicsComponent } from './topics/topics.component';
     SearchBoxComponent,
     SearchPipe,
     SanitizeHtmlPipe,
-    TopicsComponent
+    TopicsComponent,
+    TopicComponent
   ],
   imports: [
     BrowserModule,
