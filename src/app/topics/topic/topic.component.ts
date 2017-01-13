@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-topic',
@@ -6,15 +6,27 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./topic.component.css']
 })
 export class TopicComponent implements OnInit {
-  @Input() data;
+  @ViewChild('chart') private chartContainer: ElementRef;
+  @Input() info;
   private topic;
   private voca;
-  constructor() { }
+  private options;
+
+  constructor() {
+    this.options = {
+            title : { text : 'simple chart' },
+            series: [{
+                data: [29.9, 71.5, 106.4, 129.2],
+            }]
+        };
+
+   }
 
   ngOnInit() {
-    this.topic=this.data['topic'];
-    this.voca=this.data['voca'];
+    this.topic=this.info['topic'];
+    this.voca=this.info['voca'];
   }
+    
 
   private topic2string(indices,words){
     let ws=[]
@@ -23,4 +35,7 @@ export class TopicComponent implements OnInit {
     }
     return ws.join(', ')
   }
+
+
+
 }

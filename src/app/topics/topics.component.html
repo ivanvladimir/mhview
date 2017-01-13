@@ -2,5 +2,5 @@
 <my-search-box (update)="onUpdate($event)"></my-search-box>
 
 <div *ngFor="let topic of topics ">
-  <app-topic [data]='{"topic":topic,"voca":voca}'></app-topic>
+  <app-topic [info]='{"topic":topic,"voca":voca}'></app-topic>
 </div>
