@@ -1,15 +1,8 @@
 
 <my-search-box (update)="onUpdate($event)"></my-search-box>
 
-<div *ngFor="let topic of topics ">
-<md-card>
-  <md-card-title>{{topic.name}}</md-card-title>
-
-  <md-card-content>
-    <p>
-        {{topic2string(topic.indexes,voca.words)}}
-    </p>
-  </md-card-content>
-</md-card>
-    
-</div>
+<md-grid-list cols="3" rowHeight="300">
+<md-grid-tile *ngFor="let topic of topics ">
+  <app-topic [voca]="voca" [topic]="topic"></app-topic>
+</md-grid-tile>
+</md-grid-list>
