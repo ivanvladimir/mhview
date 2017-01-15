@@ -1,6 +1,9 @@
 
 <my-search-box (update)="onUpdate($event)"></my-search-box>
 
-<div *ngFor="let topic of topics ">
-  <app-topic [info]='{"topic":topic,"voca":voca}'></app-topic>
-</div>
+<md-grid-list cols="3" rowHeight="300">
+<md-grid-tile *ngFor="let topic of topics ">
+  <app-topic [voca]="voca" [topic]="topic"></app-topic>
+</md-grid-tile>
+</md-grid-list>
+

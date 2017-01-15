@@ -17,7 +17,7 @@ import {JsonService} from './json.service';
 import {SearchBoxComponent} from './search-box.component';
 import { SearchPipe } from './search.pipe';
 import { TopicsComponent } from './topics/topics.component';
-import { TopicComponent } from './topics/topic/topic.component';
+import { TopicComponent, ChartDialog } from './topics/topic.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { TopicComponent } from './topics/topic/topic.component';
     HomeComponent,
     CorporaComponent,
     SearchBoxComponent,
+    ChartDialog,
     SearchPipe,
     SanitizeHtmlPipe,
     TopicsComponent,
@@ -35,7 +36,7 @@ import { TopicComponent } from './topics/topic/topic.component';
     FormsModule,
     HttpModule,
     ChartModule,
-//    MarkdownModule,
+    //MarkdownModule,
     MaterialModule.forRoot(),
     RouterModule.forRoot(routes, { useHash: false }),
   ],

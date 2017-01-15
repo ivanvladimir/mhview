@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MarkdownModule} from 'angular2-markdown';
+//import {MarkdownModule} from 'angular2-markdown';
 
 @Component({
   selector: 'app-home',

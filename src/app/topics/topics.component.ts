@@ -9,6 +9,7 @@ import {TopicComponent} from './topic/topic.component';
   templateUrl: './topics.component.html',
   styleUrls: ['./topics.component.css']
 })
+
 export class TopicsComponent implements OnInit {
   public topics;
   public voca;
@@ -16,15 +17,14 @@ export class TopicsComponent implements OnInit {
 
   constructor(private jsonService:JsonService) { 
     this.jsonService.getTopics("wiki01").subscribe(
-        data => {this.voca = data[0]; this.topics=data[1];}
-    )
+        data => {this.voca = data[0]; this.topics=data[1]; }
+    )  
   }
-
+  
   onUpdate(term: string): void {
     this.term = term;
   }
 
   ngOnInit() {
   }
-
 }

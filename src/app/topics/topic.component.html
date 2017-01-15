@@ -1,0 +1,11 @@
+<md-card (click)="expand()">
+  <h3>{{topic.name}}</h3>
+  <md-card-content>
+    <chart [options]="options"></chart>
+
+    <p>
+        {{words.join(', ')}}
+    </p>
+  </md-card-content>
+</md-card>
+
